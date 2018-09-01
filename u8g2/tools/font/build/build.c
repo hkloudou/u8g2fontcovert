@@ -257,8 +257,11 @@ struct fontinfo fi[] ={
   { 0, "7x14B.bdf", 			"7x14B", 			1, 0, BM_T|BM_M, FM_C, MM_F|MM_R|MM_N, "", "" },
 */
 //#ifdef TMP
-  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_8, FM_8, MM_M, "bbq.map", "_bbq" },
-  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
+  { "-r 72 -p 12", "microsoftyahei.ttf", 	"microsoftyahei_12", 		21, 0, BM_8, FM_8, MM_M, "bbq.map", "_bbq" },
+  { "-r 72 -p 12", "microsoftyahei.ttf", 	"microsoftyahei_12", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
+  { "-r 72 -p 14", "microsoftyahei.ttf", 	"microsoftyahei_14", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
+  { "-r 72 -p 16", "microsoftyahei.ttf", 	"microsoftyahei_16", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
+  { "-r 72 -p 32", "microsoftyahei.ttf", 	"microsoftyahei_32", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
   /*
   { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese2" },
   { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese3" },
