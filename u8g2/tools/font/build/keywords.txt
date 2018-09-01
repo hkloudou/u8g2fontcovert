@@ -87,5 +87,5 @@ userInterfaceSelectionList	KEYWORD2
 #######################################
  
 
-u8x8_font_wqy12__chinese1	LITERAL1
-u8g2_font_wqy12_t_chinese1	LITERAL1
+u8x8_font_wqy12__bbq	LITERAL1
+u8g2_font_wqy12_t_bbq	LITERAL1
