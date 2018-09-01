@@ -16,11 +16,11 @@ ASM = $(SRC:.c=.s)
 bdfconv: $(OBJ) $(ASM)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) -o bdfconv
 
-clean:	
+clean:
 	-rm $(OBJ) $(ASM) bdfconv
 
 test:	bdfconv
-	./bdfconv 
+	./bdfconv
 
 greek: bdfconv
 	./bdfconv -f 1 -v -m '32-127,$$370-$$3ff' ../bdf/unifont.bdf -n unifont_greek -o unifont_greek.c -d ../bdf/7x13.bdf

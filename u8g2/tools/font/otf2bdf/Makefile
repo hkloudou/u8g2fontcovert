@@ -33,7 +33,8 @@ OBJS = remap.o otf2bdf.o
 #
 # Point these at the FreeType source directories.
 #
-INCS =  -I/usr/include/freetype2
+#INCS =  -I/usr/include/freetype2
+INCS =  -I/usr/local/Cellar/freetype/2.9.1/include/freetype2
 LIBS =  -L/usr/lib/i386-linux-gnu -lfreetype -lz -lfreetype
 LDFLAGS = 
 
