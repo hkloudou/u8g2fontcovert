@@ -87,33 +87,5 @@ userInterfaceSelectionList	KEYWORD2
 #######################################
  
 
+u8x8_font_wqy12__chinese1	LITERAL1
 u8g2_font_wqy12_t_chinese1	LITERAL1
-u8g2_font_wqy12_t_chinese2	LITERAL1
-u8g2_font_wqy12_t_chinese3	LITERAL1
-u8g2_font_wqy12_t_gb2312	LITERAL1
-u8g2_font_wqy12_t_gb2312a	LITERAL1
-u8g2_font_wqy12_t_gb2312b	LITERAL1
-u8g2_font_wqy13_t_chinese1	LITERAL1
-u8g2_font_wqy13_t_chinese2	LITERAL1
-u8g2_font_wqy13_t_chinese3	LITERAL1
-u8g2_font_wqy13_t_gb2312	LITERAL1
-u8g2_font_wqy13_t_gb2312a	LITERAL1
-u8g2_font_wqy13_t_gb2312b	LITERAL1
-u8g2_font_wqy14_t_chinese1	LITERAL1
-u8g2_font_wqy14_t_chinese2	LITERAL1
-u8g2_font_wqy14_t_chinese3	LITERAL1
-u8g2_font_wqy14_t_gb2312	LITERAL1
-u8g2_font_wqy14_t_gb2312a	LITERAL1
-u8g2_font_wqy14_t_gb2312b	LITERAL1
-u8g2_font_wqy15_t_chinese1	LITERAL1
-u8g2_font_wqy15_t_chinese2	LITERAL1
-u8g2_font_wqy15_t_chinese3	LITERAL1
-u8g2_font_wqy15_t_gb2312	LITERAL1
-u8g2_font_wqy15_t_gb2312a	LITERAL1
-u8g2_font_wqy15_t_gb2312b	LITERAL1
-u8g2_font_wqy16_t_chinese1	LITERAL1
-u8g2_font_wqy16_t_chinese2	LITERAL1
-u8g2_font_wqy16_t_chinese3	LITERAL1
-u8g2_font_wqy16_t_gb2312	LITERAL1
-u8g2_font_wqy16_t_gb2312a	LITERAL1
-u8g2_font_wqy16_t_gb2312b	LITERAL1

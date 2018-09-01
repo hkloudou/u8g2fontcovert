@@ -988,7 +988,8 @@ void u8log_u8x8_cb(u8log_t * u8log);
 
 /*==========================================*/
 /* start font list */
-(null)
+extern const uint8_t u8x8_font_wqy12__chinese1[] U8X8_FONT_SECTION("u8x8_font_wqy12__chinese1");
+
 /* end font list */
 
 

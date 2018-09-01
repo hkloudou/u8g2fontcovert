@@ -1,9 +1,4 @@
 /*
-  u8x8_fonts.c
-*/
-#include "u8x8.h"
-
-/*
   Fontname: -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-P-119-ISO10646-1
   Copyright: (null)
   Glyphs: 411/30503

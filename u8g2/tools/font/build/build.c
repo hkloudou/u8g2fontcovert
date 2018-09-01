@@ -257,40 +257,43 @@ struct fontinfo fi[] ={
   { 0, "7x14B.bdf", 			"7x14B", 			1, 0, BM_T|BM_M, FM_C, MM_F|MM_R|MM_N, "", "" },
 */
 //#ifdef TMP
-  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_C, MM_M, "chinese1.map", "_chinese1" },
-  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese2" },
-  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese3" },
-  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_C, MM_M, "gb2312.map", "_gb2312" },
-  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_C, MM_M, "gb2312a.map", "_gb2312a" },
-  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_C, MM_M, "gb2312b.map", "_gb2312b" },
+  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_8, FM_8, MM_M, "bbq.map", "_chinese1" },
+  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_chinese1" },
+  /*
+  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese2" },
+  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese3" },
+  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_8, MM_M, "gb2312.map", "_gb2312" },
+  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_8, MM_M, "gb2312a.map", "_gb2312a" },
+  { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_8, MM_M, "gb2312b.map", "_gb2312b" },
 
-  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_C, MM_M, "chinese1.map", "_chinese1" },
-  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese2" },
-  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese3" },
-  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_C, MM_M, "gb2312.map", "_gb2312" },
-  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_C, MM_M, "gb2312a.map", "_gb2312a" },
-  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_C, MM_M, "gb2312b.map", "_gb2312b" },
+  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_8, MM_M, "chinese1.map", "_chinese1" },
+  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese2" },
+  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese3" },
+  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_8, MM_M, "gb2312.map", "_gb2312" },
+  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_8, MM_M, "gb2312a.map", "_gb2312a" },
+  { 0, "wenquanyi_10pt.bdf", 	"wqy13", 		21, 0, BM_T, FM_8, MM_M, "gb2312b.map", "_gb2312b" },
 
-  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_C, MM_M, "chinese1.map", "_chinese1" },
-  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese2" },
-  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese3" },
-  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_C, MM_M, "gb2312.map", "_gb2312" },
-  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_C, MM_M, "gb2312a.map", "_gb2312a" },
-  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_C, MM_M, "gb2312b.map", "_gb2312b" },
+  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_8, MM_M, "chinese1.map", "_chinese1" },
+  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese2" },
+  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese3" },
+  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_8, MM_M, "gb2312.map", "_gb2312" },
+  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_8, MM_M, "gb2312a.map", "_gb2312a" },
+  { 0, "wenquanyi_13px.bdf", 	"wqy14", 		21, 0, BM_T, FM_8, MM_M, "gb2312b.map", "_gb2312b" },
 
-  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_C, MM_M, "chinese1.map", "_chinese1" },
-  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese2" },
-  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese3" },
-  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_C, MM_M, "gb2312.map", "_gb2312" },
-  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_C, MM_M, "gb2312a.map", "_gb2312a" },
-  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_C, MM_M, "gb2312b.map", "_gb2312b" },
+  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_8, MM_M, "chinese1.map", "_chinese1" },
+  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese2" },
+  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese3" },
+  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_8, MM_M, "gb2312.map", "_gb2312" },
+  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_8, MM_M, "gb2312a.map", "_gb2312a" },
+  { 0, "wenquanyi_11pt.bdf", 	"wqy15", 		21, 0, BM_T, FM_8, MM_M, "gb2312b.map", "_gb2312b" },
 
-  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_C, MM_M, "chinese1.map", "_chinese1" },
-  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese2" },
-  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_C, MM_M, "chinese2.map", "_chinese3" },
-  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_C, MM_M, "gb2312.map", "_gb2312" },
-  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_C, MM_M, "gb2312a.map", "_gb2312a" },
-  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_C, MM_M, "gb2312b.map", "_gb2312b" },
+  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_8, MM_M, "chinese1.map", "_chinese1" },
+  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese2" },
+  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese3" },
+  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_8, MM_M, "gb2312.map", "_gb2312" },
+  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_8, MM_M, "gb2312a.map", "_gb2312a" },
+  { 0, "wenquanyi_12pt.bdf", 	"wqy16", 		21, 0, BM_T, FM_8, MM_M, "gb2312b.map", "_gb2312b" },
+  */
 //#endif /* TMP */
 
 };
@@ -306,8 +309,8 @@ FILE *u8x8_font_list_fp;
 FILE *keywords_fp;
 char *u8g2_prototypes = NULL;
 char *u8x8_prototypes = NULL;
-char *u8g2_fonts_filename = "../../../csrc/u8g2_fonts.c";
-char *u8x8_fonts_filename = "../../../csrc/u8x8_fonts.c";
+char *u8g2_fonts_filename = "~/Documents/Arduino/libraries/U8g2/src/clib/u8g2_fonts.c";
+char *u8x8_fonts_filename = "~/Documents/Arduino/libraries/U8g2/src/clib/u8x8_fonts.c";
 
 char target_font_identifier[1024];
 char otf_cmd[2048];
@@ -989,9 +992,9 @@ int main(void)
   fclose(keywords_fp);
 
   printf("update u8g2.h\n");
-  insert_into_file("../../../csrc/u8g2.h", u8g2_prototypes, "/* start font list */", "/* end font list */");
+  insert_into_file("~/Documents/Arduino/libraries/U8g2/src/clib/u8g2.h", u8g2_prototypes, "/* start font list */", "/* end font list */");
   printf("update u8x8.h\n");
-  insert_into_file("../../../csrc/u8x8.h", u8x8_prototypes, "/* start font list */", "/* end font list */");
+  insert_into_file("~/Documents/Arduino/libraries/U8g2/src/clib/u8x8.h", u8x8_prototypes, "/* start font list */", "/* end font list */");
 
   unlink("font.c");
   
