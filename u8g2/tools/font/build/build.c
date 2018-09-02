@@ -24,7 +24,7 @@ extern void tga_save(const char *name);
 int add_to_str(char **dest, const char *s)
 {
   void *t;
-  
+
   if ( *dest == NULL )
   {
     *dest = strdup(s);
@@ -39,7 +39,7 @@ int add_to_str(char **dest, const char *s)
     *dest = (char *)t;
     strcat(*dest, s);
   }
-  
+
   return 1;
 }
 
@@ -51,19 +51,19 @@ int file_copy(const char *source_file_name, const char *dest_file_name)
   int ch;
   FILE *source_fp;
   FILE *dest_fp;
-  
+
   source_fp = fopen(source_file_name, "r");
   dest_fp = fopen(dest_file_name, "w");
-  
+
   if ( source_fp == NULL || dest_fp == NULL )
     return 0;
-  
+
   while( ( ch = fgetc(source_fp) ) != EOF )
     fputc(ch, dest_fp);
-  
+
   fclose(source_fp);
   fclose(dest_fp);
-  
+
   return 1;
 }
 
@@ -77,7 +77,7 @@ int insert_into_file(const char *filename, const char *text, const char *start_l
   const char *tmpname = "tmp.h";
   FILE *source_fp;
   FILE *dest_fp;
-  
+
   if ( file_copy(filename, tmpname) == 0 )
     return 0;
 
@@ -86,7 +86,7 @@ int insert_into_file(const char *filename, const char *text, const char *start_l
 
   if ( source_fp == NULL || dest_fp == NULL )
     return 0;
-  
+
   for(;;)
   {
     if ( fgets(line, 1024*4, source_fp) == NULL )
@@ -96,7 +96,7 @@ int insert_into_file(const char *filename, const char *text, const char *start_l
       fputs(line, dest_fp);
       fputs(text, dest_fp);
       fputs("\n", dest_fp);
-      
+
       for(;;)
       {
 	if ( fgets(line, 1024*4, source_fp) == NULL )
@@ -116,7 +116,7 @@ int insert_into_file(const char *filename, const char *text, const char *start_l
 
   fclose(source_fp);
   fclose(dest_fp);
-  
+
   unlink(tmpname);
 
   return 1;
@@ -174,13 +174,13 @@ struct groupinfo gi[] = {
   { "NBP", 		"fntgrpnbp", 		"../../../../u8g2.wiki/fntgrpnbp.md", 			"fntgrpnbp.pre" }, 		/* 18 */
   { "UW ttyp0", 	"fntgrpttyp0", 		"../../../../u8g2.wiki/fntgrpttyp0.md", 		"fntgrpttyp0.pre" }, 		/* 19 */
   { "Siji Icon Font", 	"fntgrpsiji", 		"../../../../u8g2.wiki/fntgrpsiji.md", 		"fntgrpsiji.pre" }, 		/* 20 */
-  { "Wqy (Chinese Font)", 	"fntgrpwqy", 		"../../../../u8g2.wiki/fntgrpwqy.md", 		"fntgrpwqy.pre" }, 		/* 21 */  
-  { "Open Iconic", 	"fntgrpiconic", 		"../../../../u8g2.wiki/fntgrpiconic.md", 		"fntgrpiconic.pre" }, 		/* 22 */  
-  { "Persian", 	"fntgrppersian", 		"../../../../u8g2.wiki/fntgrppersian.md", 		"fntgrppersian.pre" }, 		/* 23 */  
-  { "Tom-Thumb", 	"fntgrptomthumb", 		"../../../../u8g2.wiki/fntgrptomthumb.md", 		"fntgrptomthumb.pre" }, 		/* 24 */  
+  { "Wqy (Chinese Font)", 	"fntgrpwqy", 		"../../../../u8g2.wiki/fntgrpwqy.md", 		"fntgrpwqy.pre" }, 		/* 21 */
+  { "Open Iconic", 	"fntgrpiconic", 		"../../../../u8g2.wiki/fntgrpiconic.md", 		"fntgrpiconic.pre" }, 		/* 22 */
+  { "Persian", 	"fntgrppersian", 		"../../../../u8g2.wiki/fntgrppersian.md", 		"fntgrppersian.pre" }, 		/* 23 */
+  { "Tom-Thumb", 	"fntgrptomthumb", 		"../../../../u8g2.wiki/fntgrptomthumb.md", 		"fntgrptomthumb.pre" }, 		/* 24 */
 
 
-  
+
 };
 
 #define BM_T	1	/* Transparent = build mode 0 proportional */
@@ -261,6 +261,7 @@ struct fontinfo fi[] ={
   { "-r 72 -p 12", "microsoftyahei.ttf", 	"microsoftyahei_12", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
   { "-r 72 -p 14", "microsoftyahei.ttf", 	"microsoftyahei_14", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
   { "-r 72 -p 16", "microsoftyahei.ttf", 	"microsoftyahei_16", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
+  { "-r 72 -p 20", "microsoftyahei.ttf", 	"microsoftyahei_20", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
   { "-r 72 -p 32", "microsoftyahei.ttf", 	"microsoftyahei_32", 		21, 0, BM_T, FM_C, MM_M, "bbq.map", "_bbq" },
   /*
   { 0, "wenquanyi_9pt.bdf", 	"wqy12", 		21, 0, BM_T, FM_8, MM_M, "chinese2.map", "_chinese2" },
@@ -377,29 +378,29 @@ void overview_draw_table(int i, uint16_t x, uint16_t y)
   uint16_t glyphs_per_line = 16;
   int size;
   static char s[256];
-  
+
   h = 13;
-  
+
   u8g2_SetFont(&u8g2, u8g2_font_list[u8g2_fnt_cnt]);
   u8g2_SetFontDirection(&u8g2, 0);
   u8g2_SetFontMode(&u8g2, 1);
 
   ch = u8g2_GetMaxCharHeight(&u8g2);
   cw = u8g2_GetMaxCharWidth(&u8g2);
-  
-  sprintf(s, "BBX Width %d, Height %d, Capital A %d", 
-    u8g2_GetMaxCharWidth(&u8g2), 
+
+  sprintf(s, "BBX Width %d, Height %d, Capital A %d",
+    u8g2_GetMaxCharWidth(&u8g2),
     u8g2_GetMaxCharHeight(&u8g2),
     u8g2_GetAscent(&u8g2));
-    
-  u8g2_SetFont(&u8g2, u8g2_font_7x13_tr);    
+
+  u8g2_SetFont(&u8g2, u8g2_font_7x13_tr);
   u8g2_DrawStr(&u8g2, 0, h, u8g2_font_names[u8g2_fnt_cnt]);
   u8g2_DrawStr(&u8g2, 0, h*2, s);
-  
+
   size = u8g2_GetFontSize(u8g2_font_list[u8g2_fnt_cnt]);
   if ( size > 100000 )
     glyphs_per_line = 32;
-    
+
   sprintf(s, "Font Data Size: %d Bytes", size);
   u8g2_DrawStr(&u8g2, 0, h*3, s);
 
@@ -411,16 +412,16 @@ void overview_draw_table(int i, uint16_t x, uint16_t y)
   if ( ch < h )
     ch = h;
   y = h*3+ch+1;
-  
+
   line = 0;
   for(;;)
   {
     encoding = line*glyphs_per_line;
     if ( is_overview_line_empty(encoding) == 0 )
     {
-      u8g2_SetFont(&u8g2, u8g2_font_7x13_tr);    
+      u8g2_SetFont(&u8g2, u8g2_font_7x13_tr);
       sprintf(s, "%5d/%04x ", encoding, encoding);
-      
+
       x = u8g2_DrawStr(&u8g2, 0, y, s);
       overview_draw_line(i, encoding, x, y, cw+1, glyphs_per_line);
       y += ch;
@@ -434,13 +435,13 @@ void overview_draw_table(int i, uint16_t x, uint16_t y)
     y++;
     // y -= ch;
     u8g2_SetFont(&u8g2, u8g2_font_list[u8g2_fnt_cnt]);
-    u8g2_SetFontDirection(&u8g2, 0); 
+    u8g2_SetFontDirection(&u8g2, 0);
     //y += u8g2_GetMaxCharHeight(&u8g2);
     u8g2_DrawStr(&u8g2, 0, y, "The quick brown fox");
     y += u8g2_GetMaxCharHeight(&u8g2);
     u8g2_DrawStr(&u8g2, 0, y, "jumps over the lazy dog.");
   }
-  //u8g2_DrawStr(&u8g2, 0, y, "Woven silk pyjamas exchanged for blue quartz"); 
+  //u8g2_DrawStr(&u8g2, 0, y, "Woven silk pyjamas exchanged for blue quartz");
 
 }
 
@@ -449,13 +450,13 @@ void overview_draw_table(int i, uint16_t x, uint16_t y)
 void overviewpic(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
 {
   int cw, ch;
-  if ( fm == FM_8 ) 
+  if ( fm == FM_8 )
   {
-  
-    printf("8x8 font overview picture %s\n", target_font_identifier);  
+
+    printf("8x8 font overview picture %s\n", target_font_identifier);
     u8g2_SetupBuffer_TGA(&u8g2, &u8g2_cb_r0);
     u8x8_InitDisplay(u8g2_GetU8x8(&u8g2));
-    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);  
+    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);
     //u8x8_ClearDisplay(u8g2_GetU8x8(&u8g2));
     u8x8_SetFont(u8g2_GetU8x8(&u8g2), u8x8_font_amstrad_cpc_extended_r);
     u8x8_DrawString(u8g2_GetU8x8(&u8g2), 0, 0, target_font_identifier);
@@ -476,39 +477,39 @@ void overviewpic(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
 	}
       }
     }
-    
+
     if ( mm != MM_N )
       u8x8_DrawString(u8g2_GetU8x8(&u8g2), 0,16+2, "The quick brown fox jumps over the lazy dog.");
 
     tga_save("font.tga");
-    
+
     sprintf(convert_cmd, "convert font.tga -trim %s.png", target_font_identifier );
     system(convert_cmd);
     u8x8_fnt_cnt++;
   }
-  else if ( fm == FM_C ) 
+  else if ( fm == FM_C )
   {
     printf("overview picture %s\n", target_font_identifier);
     u8g2_SetupBuffer_TGA(&u8g2, &u8g2_cb_r0);
     u8x8_InitDisplay(u8g2_GetU8x8(&u8g2));
-    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);  
+    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);
     //u8g2_SetFont(&u8g2, u8g2_font_helvB14_tr);
 
-    
+
     u8g2_FirstPage(&u8g2);
     do
     {
 
       overview_draw_table(i, 0, 60);
 
-      //overviewline(i, '@', 0, 80, cw);      
+      //overviewline(i, '@', 0, 80, cw);
     } while( u8g2_NextPage(&u8g2) );
 
     strcpy(tga_filename, target_font_identifier);
     strcat(tga_filename, ".tga");
-    
+
     tga_save("font.tga");
-    
+
     sprintf(convert_cmd, "convert font.tga -trim %s.png", target_font_identifier );
     system(convert_cmd);
 
@@ -521,10 +522,10 @@ void overviewshortpic(int i, int fm, char *fms, int bm, char *bms, int mm, char 
   int cw, ch;
   if ( fm == FM_8 )
   {
-    printf("8x8 font short overview picture %s\n", target_font_identifier);  
+    printf("8x8 font short overview picture %s\n", target_font_identifier);
     u8g2_SetupBuffer_TGA(&u8g2, &u8g2_cb_r0);
     u8x8_InitDisplay(u8g2_GetU8x8(&u8g2));
-    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);  
+    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);
     //u8x8_ClearDisplay(u8g2_GetU8x8(&u8g2));
     u8x8_SetFont(u8g2_GetU8x8(&u8g2), u8x8_font_list[u8x8_fnt_cnt]);
 
@@ -534,20 +535,20 @@ void overviewshortpic(int i, int fm, char *fms, int bm, char *bms, int mm, char 
       u8x8_DrawString(u8g2_GetU8x8(&u8g2), 0, 0, "ABCDEF 123");
     else
       u8x8_DrawString(u8g2_GetU8x8(&u8g2), 0, 0, "Abcdefg 123");
-    
+
     tga_save("font.tga");
-    
+
     sprintf(convert_cmd, "convert font.tga -trim %s_short.png", target_font_identifier );
     system(convert_cmd);
 
     u8x8_fnt_cnt++;
   }
-  else if ( fm == FM_C ) 
+  else if ( fm == FM_C )
   {
     printf("short overview picture %s\n", target_font_identifier);
     u8g2_SetupBuffer_TGA(&u8g2, &u8g2_cb_r0);
     u8x8_InitDisplay(u8g2_GetU8x8(&u8g2));
-    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);  
+    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);
     //u8g2_SetFont(&u8g2, u8g2_font_helvB14_tr);
 
     u8g2_SetFont(&u8g2, u8g2_font_list[u8g2_fnt_cnt]);
@@ -565,11 +566,11 @@ void overviewshortpic(int i, int fm, char *fms, int bm, char *bms, int mm, char 
 	u8g2_DrawStr(&u8g2, 0, ch, "ABCDEF 123");
       else
 	u8g2_DrawStr(&u8g2, 0, ch, "Abcdefg 123");
-    
+
     } while( u8g2_NextPage(&u8g2) );
 
     tga_save("font.tga");
-    
+
     sprintf(convert_cmd, "convert font.tga -trim %s_short.png", target_font_identifier );
     system(convert_cmd);
 
@@ -583,29 +584,29 @@ int mfont_found_for_this_size = 0;
 void generate_font_list(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
 {
 
-  if ( fm == FM_8 ) 
+  if ( fm == FM_8 )
   {
     if ( current_capital_A_size == 8 )
     {
       fprintf(fntlist8x8, "![fntpic/%s_short.png](fntpic/%s_short.png) ", target_font_identifier, target_font_identifier);
       fprintf(fntlist8x8, "%s ", target_font_identifier);
       fprintf(fntlist8x8, " [%s](%s)\n\n", gi[fi[i].group].groupname, gi[fi[i].group].reference);
-  
+
       u8x8_fnt_cnt++;
     }
   }
-  else if ( fm == FM_C ) 
+  else if ( fm == FM_C )
   {
     u8g2_SetupBuffer_TGA(&u8g2, &u8g2_cb_r0);
     u8x8_InitDisplay(u8g2_GetU8x8(&u8g2));
-    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);  
+    u8x8_SetPowerSave(u8g2_GetU8x8(&u8g2), 0);
     if ( u8g2_font_list[u8g2_fnt_cnt] != NULL )
     {
       u8g2_SetFont(&u8g2, u8g2_font_list[u8g2_fnt_cnt]);
       u8g2_SetFontDirection(&u8g2, 0);
       if ( current_capital_A_size == u8g2.font_info.ascent_A )
       {
-	if ( font_found_for_this_size == 0 ) 
+	if ( font_found_for_this_size == 0 )
 	{
 	  fprintf(fntlistall, "\n## %d Pixel Height\n\n", current_capital_A_size);
 	  printf("listall: == %d ==\n", current_capital_A_size);
@@ -616,12 +617,12 @@ void generate_font_list(int i, int fm, char *fms, int bm, char *bms, int mm, cha
 	fprintf(fntlistall, " [%s](%s)\n\n", gi[fi[i].group].groupname, gi[fi[i].group].reference);
 	//printf("%d: %s %s\n", current_capital_A_size, target_font_identifier, gi[fi[i].group].groupname);
       }
-	
+
       if ( bm == BM_M || bm == BM_8 )
       {
 	if ( current_capital_A_size == u8g2.font_info.ascent_A )
 	{
-	  if ( mfont_found_for_this_size == 0 ) 
+	  if ( mfont_found_for_this_size == 0 )
 	  {
 	    fprintf(fntlistmono, "\n## %d Pixel Height\n\n", current_capital_A_size);
 	    printf("listmono: == %d ==\n", current_capital_A_size);
@@ -630,7 +631,7 @@ void generate_font_list(int i, int fm, char *fms, int bm, char *bms, int mm, cha
 	  fprintf(fntlistmono, "![fntpic/%s_short.png](fntpic/%s_short.png) ", target_font_identifier, target_font_identifier);
 	  fprintf(fntlistmono, "%s ", target_font_identifier);
 	  fprintf(fntlistmono, " [%s](%s)\n\n", gi[fi[i].group].groupname, gi[fi[i].group].reference);
-	  
+
 	}
       }
       u8g2_fnt_cnt++;
@@ -667,7 +668,7 @@ void do_font_list(cbfn_t cb)
 
 void bdfconv(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
 {
-  
+
   if ( fi[i].ttf_opt != NULL )
   {
     strcpy(otf_cmd, otf2bdf_path);
@@ -679,31 +680,31 @@ void bdfconv(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
     printf("%s\n", otf_cmd);
     system(otf_cmd);
   }
-  
-  
+
+
   strcpy(bdf_cmd, bdfconv_path);
   strcat(bdf_cmd, " ");
 
   if ( fm == FM_C ) strcat(bdf_cmd, " -f 1");
   if ( fm == FM_8 ) strcat(bdf_cmd, " -f 2");
-  
+
   if ( bm == BM_T ) strcat(bdf_cmd, " -b 0");
   if ( bm == BM_H ) strcat(bdf_cmd, " -b 1");
   if ( bm == BM_M ) strcat(bdf_cmd, " -b 2");
   if ( bm == BM_8 ) strcat(bdf_cmd, " -b 3");
-  
+
   if ( mm == MM_F ) strcat(bdf_cmd, " -m '32-255>32'");
   if ( mm == MM_R ) strcat(bdf_cmd, " -m '32-127>32'");
   if ( mm == MM_N ) strcat(bdf_cmd, " -m '32,42-58>42'");
   if ( mm == MM_U ) strcat(bdf_cmd, " -m '32-95>32'");
   if ( mm == MM_E ) strcat(bdf_cmd, " -m '32-701>32,7838'");
-  if ( mm == MM_C ) 
+  if ( mm == MM_C )
   {
     strcat(bdf_cmd, " -m '");
     strcat(bdf_cmd, fi[i].map_custom);
     strcat(bdf_cmd, "'");
   }
-  if ( mm == MM_M ) 
+  if ( mm == MM_M )
   {
     strcat(bdf_cmd, " -M '");
     strcat(bdf_cmd, fi[i].map_custom);
@@ -728,21 +729,21 @@ void bdfconv(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
   //strcat(bdf_cmd, target_font_identifier);
   strcat(bdf_cmd, "font");
   strcat(bdf_cmd, ".c");
-  
-  
+
+
   /*
   if ( fi[i].kerning_min_distance_per_cent > 0 )
   {
     strcat(bdf_cmd, " -k ");
     strcat(bdf_cmd, target_font_identifier);
     strcat(bdf_cmd, "_k.c");
-	  
+
     strcat(bdf_cmd, " -p ");
     sprintf(bdf_cmd+strlen(bdf_cmd), "%d", fi[i].kerning_min_distance_per_cent);
-	
+
   }
   */
-  
+
 /*
     fprintf(out_fp, "const uint8_t %s[%d] U8X8_FONT_SECTION(\"%s\") \n", fontname, bf->target_cnt, fontname);
     fprintf(out_fp, "const uint8_t %s[%d] U8G2_FONT_SECTION(\"%s\") \n", fontname, bf->target_cnt, fontname);
@@ -752,20 +753,20 @@ void bdfconv(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
   strcat(font_prototype, target_font_identifier);
   strcat(font_prototype, "[]");
 
-  if ( fm == FM_8 ) 
+  if ( fm == FM_8 )
   {
     strcat(bdf_cmd, " && cat font.c >>");
     strcat(bdf_cmd, u8x8_fonts_filename);
-    strcat(font_prototype, " U8X8_FONT_SECTION(\"");    
+    strcat(font_prototype, " U8X8_FONT_SECTION(\"");
     strcat(font_prototype, target_font_identifier);
     strcat(font_prototype, "\");\n");
     add_to_str(&u8x8_prototypes, font_prototype);
   }
   else
-  {    
+  {
     strcat(bdf_cmd, " && cat font.c >>");
     strcat(bdf_cmd, u8g2_fonts_filename);
-    strcat(font_prototype, " U8G2_FONT_SECTION(\"");    
+    strcat(font_prototype, " U8G2_FONT_SECTION(\"");
     strcat(font_prototype, target_font_identifier);
     strcat(font_prototype, "\");\n");
     add_to_str(&u8g2_prototypes, font_prototype);
@@ -773,41 +774,41 @@ void bdfconv(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
 
   printf("%s\n", bdf_cmd);
   system(bdf_cmd);
-  
+
   strcpy(bdf_cmd, "cp font.c ./single_font_files/");
   strcat(bdf_cmd, target_font_identifier);
   strcat(bdf_cmd, ".c");
   system(bdf_cmd);
-  
+
 }
 
 void fontlist_identifier(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
 {
-  if ( fm == FM_C ) 
+  if ( fm == FM_C )
   {
     fprintf(u8g2_font_list_fp, "  %s,\n", target_font_identifier);
   }
-  if ( fm == FM_8 ) 
+  if ( fm == FM_8 )
   {
     fprintf(u8x8_font_list_fp, "  %s,\n", target_font_identifier);
   }
-  
+
 }
 
 void fontlist_name(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
 {
-  if ( fm == FM_C ) 
+  if ( fm == FM_C )
   {
     fprintf(u8g2_font_list_fp, "  \"%s\",\n", target_font_identifier);
   }
-  if ( fm == FM_8 ) 
+  if ( fm == FM_8 )
   {
     fprintf(u8x8_font_list_fp, "  \"%s\",\n", target_font_identifier);
   }
 
   fprintf(keywords_fp, "%s\tLITERAL1\n", target_font_identifier);
-  
-  
+
+
 }
 
 void generate_font_group_md(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
@@ -815,16 +816,16 @@ void generate_font_group_md(int i, int fm, char *fms, int bm, char *bms, int mm,
   static int _i = 0;
   static int _fm = 0;
   static int _bm = 0;
-  
+
   if ( fi[i].group == current_font_group_index )
   {
     if ( strcmp( current_font_name, fi[i].name ) != 0 )
     {
       strcpy(current_font_name, fi[i].name);
-      
+
       fprintf(current_md_file, "\n");
       fprintf(current_md_file, "## %s\n", current_font_name);
-      printf("## %s\n", current_font_name);      
+      printf("## %s\n", current_font_name);
     }
     else
     {
@@ -837,30 +838,30 @@ void generate_font_group_md(int i, int fm, char *fms, int bm, char *bms, int mm,
       }
     }
     fprintf(current_md_file, "![fntpic/%s.png](fntpic/%s.png)\n", target_font_identifier, target_font_identifier);
-    
+
     _i = i;
     _fm = fm;
     _bm = bm;
     printf( "%s %s\n", gi[current_font_group_index].mdfile, target_font_identifier);
   }
-  
+
 }
 
 
 void gen_font(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms, cbfn_t cb )
 {
-  
+
   if ( fm == FM_8 )
     if ( bm != BM_8 )
       return;
-  
+
   strcpy(target_font_identifier, fms);
   strcat(target_font_identifier, "_font_");
   strcat(target_font_identifier, fi[i].name);
   strcat(target_font_identifier, "_");
   strcat(target_font_identifier, bms);
   strcat(target_font_identifier, mms);
-    
+
   cb(i, fm,fms,bm,bms,mm,mms);
 }
 
@@ -892,7 +893,7 @@ void build_font(int i, int fm, char *fms, cbfn_t cb)
     map_font(i, fm, fms, BM_M, "m", cb);
   if ( (fi[i].build_mode & BM_8) != 0 )
   {
-    if ( fm == FM_8 ) 
+    if ( fm == FM_8 )
       map_font(i, fm, fms, BM_8, "", cb);
     else
       map_font(i, fm, fms, BM_8, "8", cb);
@@ -903,7 +904,7 @@ void process_font(int i, cbfn_t cb)
 {
   FILE *fp;
   static char s[1024];
- 
+
   if ( fi[i].ttf_opt == 0 )
   {
     strcpy(s,bdf_path);
@@ -920,7 +921,7 @@ void process_font(int i, cbfn_t cb)
     return;
   }
   fclose(fp);
-  
+
   if ( (fi[i].font_mode & FM_C) != 0 )
     build_font(i, FM_C, "u8g2", cb);
   if ( (fi[i].font_mode & FM_8) != 0 )
@@ -946,7 +947,7 @@ void do_font_groups(cbfn_t cb)
     file_copy(gi[current_font_group_index].mdprefixfile, gi[current_font_group_index].mdfile);
     current_md_file = fopen(gi[current_font_group_index].mdfile, "a");
     fprintf(current_md_file, "\n");
-    strcpy(current_font_name, ".");    
+    strcpy(current_font_name, ".");
     do_font_loop(cb);
     fclose(current_md_file);
   }
@@ -960,17 +961,17 @@ int main(void)
   //unlink(u8g2_fonts_filename);
 
 #ifndef BUILD2
-  
+
   if ( file_copy("u8x8_fonts.pre", u8x8_fonts_filename) == 0 )
     return 0;
   if ( file_copy("u8g2_fonts.pre", u8g2_fonts_filename) == 0 )
     return 0;
   if ( file_copy("keywords.pre", "keywords.txt") == 0 )
     return 0;
-  
-  
+
+
   do_font_loop(bdfconv);
-  
+
   u8g2_font_list_fp = fopen("u8g2_font_list.c", "w");
   u8x8_font_list_fp  = fopen("u8x8_font_list.c", "w");
   keywords_fp  = fopen("keywords.txt", "a");
@@ -989,7 +990,7 @@ int main(void)
   do_font_loop(fontlist_name);
   fprintf(u8g2_font_list_fp, "  NULL\n};\n");
   fprintf(u8x8_font_list_fp, "  NULL\n};\n");
-  
+
   fclose(u8g2_font_list_fp);
   fclose(u8x8_font_list_fp);
   fclose(keywords_fp);
@@ -1000,10 +1001,10 @@ int main(void)
   insert_into_file("/Users/undefined/Documents/Arduino/libraries/U8g2/src/clib/u8x8.h", u8x8_prototypes, "/* start font list */", "/* end font list */");
 
   unlink("font.c");
-  
-  
+
+
   do_font_groups(generate_font_group_md);
-  
+
 #endif
 
 #ifdef BUILD2
@@ -1015,7 +1016,7 @@ int main(void)
   do_font_loop(overviewshortpic);
   do_font_list(generate_font_list);
 
-  
+
 #endif
 
   return 0;
