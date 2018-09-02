@@ -4,6 +4,7 @@ const uint8_t *u8g2_font_list[] = {
   u8g2_font_microsoftyahei_12_t_bbq,
   u8g2_font_microsoftyahei_14_t_bbq,
   u8g2_font_microsoftyahei_16_t_bbq,
+  u8g2_font_microsoftyahei_20_t_bbq,
   u8g2_font_microsoftyahei_32_t_bbq,
   NULL
 };
@@ -11,6 +12,7 @@ char *u8g2_font_names[] = {
   "u8g2_font_microsoftyahei_12_t_bbq",
   "u8g2_font_microsoftyahei_14_t_bbq",
   "u8g2_font_microsoftyahei_16_t_bbq",
+  "u8g2_font_microsoftyahei_20_t_bbq",
   "u8g2_font_microsoftyahei_32_t_bbq",
   NULL
 };

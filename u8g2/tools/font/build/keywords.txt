@@ -87,8 +87,3 @@ userInterfaceSelectionList	KEYWORD2
 #######################################
  
 
-u8x8_font_microsoftyahei_12__bbq	LITERAL1
-u8g2_font_microsoftyahei_12_t_bbq	LITERAL1
-u8g2_font_microsoftyahei_14_t_bbq	LITERAL1
-u8g2_font_microsoftyahei_16_t_bbq	LITERAL1
-u8g2_font_microsoftyahei_32_t_bbq	LITERAL1
