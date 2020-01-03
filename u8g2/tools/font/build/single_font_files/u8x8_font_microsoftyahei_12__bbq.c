@@ -1,7 +1,7 @@
 /*
   Fontname: -FreeType-Microsoft YaHei-Medium-R-Normal--12-120-72-72-P-119-ISO10646-1
   Copyright: © 2006 Microsoft Corporation. All rights reserved.
-  Glyphs: 508/29058
+  Glyphs: 517/29058
   BBX Build Mode: 3
 */
 const uint8_t u8x8_font_microsoftyahei_12__bbq[770] U8X8_FONT_SECTION("u8x8_font_microsoftyahei_12__bbq") = 
